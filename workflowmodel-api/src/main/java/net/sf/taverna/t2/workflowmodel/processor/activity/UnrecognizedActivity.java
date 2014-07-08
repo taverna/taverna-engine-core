@@ -3,6 +3,7 @@
  */
 package net.sf.taverna.t2.workflowmodel.processor.activity;
 
+import net.sf.taverna.t2.workflowmodel.Edits;
 import org.jdom.Element;
 
 /**
@@ -20,12 +21,12 @@ public final class UnrecognizedActivity extends
 	/**
 	 * It is not possible to create a "naked" UnrecognizedActivity.
 	 */
-	private UnrecognizedActivity() {
-		super();
+	private UnrecognizedActivity(Edits edits) {
+		super(edits);
 	}
 
-	public UnrecognizedActivity(Element config) throws ActivityConfigurationException {
-	    this();
+	public UnrecognizedActivity(Element config, Edits edits) throws ActivityConfigurationException {
+	    this(edits);
 	    this.configure(config);
 	}
 

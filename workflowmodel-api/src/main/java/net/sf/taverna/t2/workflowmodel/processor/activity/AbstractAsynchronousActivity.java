@@ -21,8 +21,8 @@
 package net.sf.taverna.t2.workflowmodel.processor.activity;
 
 import java.util.Map;
-
 import net.sf.taverna.t2.reference.T2Reference;
+import net.sf.taverna.t2.workflowmodel.Edits;
 
 /**
  * Abstract superclass for asynchronous activities. Activity providers should only
@@ -37,6 +37,10 @@ import net.sf.taverna.t2.reference.T2Reference;
  */
 public abstract class AbstractAsynchronousActivity<ConfigType> extends
 		AbstractActivity<ConfigType> implements AsynchronousActivity<ConfigType> {
+    
+        public AbstractAsynchronousActivity(Edits edits){
+            super(edits);
+        }
 
 	/**
 	 * Called immediately after object construction by the deserialisation

@@ -55,7 +55,7 @@ public class EditsImplTests {
 	
 	@Test
 	public void testGetConfigureActivityEdit() {
-		Edit<?> edit = edits.getConfigureActivityEdit(new AsynchEchoActivity(), new EchoConfig());
+		Edit<?> edit = edits.getConfigureActivityEdit(new AsynchEchoActivity(new EditsImpl()), new EchoConfig());
 		assertTrue(edit instanceof ConfigureActivityEdit);
 	}
 }

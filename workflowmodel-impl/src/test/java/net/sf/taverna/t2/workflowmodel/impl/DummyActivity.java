@@ -25,6 +25,9 @@ import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityConfigurationE
 
 public class DummyActivity extends AbstractActivity<Integer> {
 
+        public DummyActivity(){
+            super(new EditsImpl());
+        }
 	private Integer bean=null;
 	
 	@Override

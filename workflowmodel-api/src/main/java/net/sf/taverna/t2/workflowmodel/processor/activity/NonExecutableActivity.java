@@ -4,8 +4,8 @@
 package net.sf.taverna.t2.workflowmodel.processor.activity;
 
 import java.util.Map;
-
 import net.sf.taverna.t2.reference.T2Reference;
+import net.sf.taverna.t2.workflowmodel.Edits;
 
 
 /**
@@ -22,9 +22,9 @@ public abstract class NonExecutableActivity<T> extends AbstractAsynchronousActiv
 	/**
 	 * It is not possible to create a "naked" NonExecutableActivity.
 	 */
-	protected NonExecutableActivity() {
-		super();
-	}
+	protected NonExecutableActivity (Edits edits){
+            super(edits);
+        }
 
 	/**
 	 * Add an input to the NonExecutableActivity with the specified name.

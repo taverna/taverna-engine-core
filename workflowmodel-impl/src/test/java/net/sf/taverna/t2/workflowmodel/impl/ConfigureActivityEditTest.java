@@ -63,6 +63,9 @@ public class ConfigureActivityEditTest {
 	}
 	
 	class DummyActivity extends AbstractActivity<Object> {
+                public DummyActivity(){
+                    super(new EditsImpl());
+                }
 		public boolean isConfigured=false;
 		public Object configBean=null;
 		@Override

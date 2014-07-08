@@ -23,9 +23,9 @@ package net.sf.taverna.t2.workflowmodel.processor;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import net.sf.taverna.t2.reference.ExternalReferenceSPI;
 import net.sf.taverna.t2.reference.T2Reference;
+import net.sf.taverna.t2.workflowmodel.Edits;
 import net.sf.taverna.t2.workflowmodel.processor.activity.AbstractAsynchronousActivity;
 import net.sf.taverna.t2.workflowmodel.processor.activity.ActivityConfigurationException;
 import net.sf.taverna.t2.workflowmodel.processor.activity.AsynchronousActivity;
@@ -35,6 +35,10 @@ public class AsynchEchoActivity extends
 		AbstractAsynchronousActivity<EchoConfig> implements
 		AsynchronousActivity<EchoConfig> {
 
+        public AsynchEchoActivity(Edits edits){
+            super(edits);
+        }   
+        
 	private EchoConfig config;
 
 	@Override

@@ -22,6 +22,7 @@ package net.sf.taverna.t2.workflowmodel.processor.activity;
 
 import java.util.HashSet;
 import java.util.Map;
+import net.sf.taverna.t2.workflowmodel.Edits;
 
 import net.sf.taverna.t2.workflowmodel.OutputPort;
 
@@ -53,9 +54,9 @@ public final class DisabledActivity extends NonExecutableActivity<ActivityAndBea
 	/**
 	 * It is not possible to create a "naked" DisabledActivity.
 	 */
-	private DisabledActivity() {
-		super();
-		lastWorkingConfiguration = null;
+	private DisabledActivity(Edits edits){
+            super(edits);
+            lastWorkingConfiguration = null;
 	}
 
 	/**
@@ -72,10 +73,10 @@ public final class DisabledActivity extends NonExecutableActivity<ActivityAndBea
 	 * @throws IllegalAccessException
 	 * @throws ActivityConfigurationException
 	 */
-	public DisabledActivity(Class<? extends Activity> activityClass,
+	public DisabledActivity(Edits edits, Class<? extends Activity> activityClass,
 			Object config) throws InstantiationException,
 			IllegalAccessException, ActivityConfigurationException {
-		this(activityClass.newInstance(), config);
+		this(edits, activityClass.newInstance(), config);
 	}
 
 	/**
@@ -87,8 +88,8 @@ public final class DisabledActivity extends NonExecutableActivity<ActivityAndBea
 	 * @param config
 	 *            The configuration of the activity.
 	 */
-	public DisabledActivity(Activity activity, Object config) {
-		this();
+	public DisabledActivity(Edits edits, Activity activity, Object config) {
+		this(edits);
 		ActivityAndBeanWrapper disabledConfig = new ActivityAndBeanWrapper();
 		disabledConfig.setActivity(activity);
 		disabledConfig.setBean(config);
@@ -108,8 +109,8 @@ public final class DisabledActivity extends NonExecutableActivity<ActivityAndBea
 	 *
 	 * @param activity The Activity that is now disabled.
 	 */
-	public DisabledActivity(Activity<?> activity) {
-		this(activity, activity.getConfiguration());
+	public DisabledActivity(Edits edits, Activity<?> activity) {
+		this(edits, activity, activity.getConfiguration());
 		for (ActivityInputPort aip : activity.getInputPorts()) {
 			this.addInput(aip.getName(), aip.getDepth(), aip
 					.allowsLiteralValues(), aip.getHandledReferenceSchemes(),
@@ -204,4 +205,5 @@ public final class DisabledActivity extends NonExecutableActivity<ActivityAndBea
 	public Object getLastWorkingConfiguration() {
 	    return lastWorkingConfiguration;
 	}
-}
+
+ }

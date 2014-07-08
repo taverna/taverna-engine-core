@@ -42,8 +42,6 @@ import net.sf.taverna.t2.workflowmodel.Edits;
  */
 public interface Activity<ConfigurationType> extends Annotated<Activity<?>>, Configurable<ConfigurationType> {
 
-
-
 	/**
 	 * An Activity contains a set of named input ports. Names must be unique
 	 * within this set.
@@ -87,7 +85,5 @@ public interface Activity<ConfigurationType> extends Annotated<Activity<?>>, Con
 	 * {@inheritDoc}
 	 */
 	public abstract void configure(ConfigurationType conf) throws ActivityConfigurationException;
-
-	public void setEdits(Edits edits);
 
 }

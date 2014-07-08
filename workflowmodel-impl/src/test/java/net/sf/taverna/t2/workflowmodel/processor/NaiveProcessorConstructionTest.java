@@ -40,8 +40,7 @@ public class NaiveProcessorConstructionTest extends TestCase {
 
 	public void testProcessorFactory() throws EditException, JDOMException,
 			IOException, ActivityConfigurationException {
-		AsynchEchoActivity activity = new AsynchEchoActivity();
-		activity.setEdits(new EditsImpl());
+		AsynchEchoActivity activity = new AsynchEchoActivity(new EditsImpl());
 		activity.configure(new EchoConfig("blah"));
 		Tools.buildFromActivity(activity);
 	}
