@@ -10,17 +10,20 @@
 
 	<groupId>net.sf.taverna.t2</groupId>
 	<artifactId>core</artifactId>
-	<version>1.5</version>
+	<version>1.5.1</version>
 	<packaging>pom</packaging>
 
 	<name>Taverna 2 Core</name>	
 	<modules>
+    <!--
 		<module>reference-api</module>
 		<module>reference-impl</module>
 		<module>reference-testhelpers</module>
 		<module>workflowmodel-api</module>
 		<module>workflowmodel-impl</module>
 		<module>provenanceconnector</module>
+    -->
+		<module>taverna-engine-referencetypes-T3-1213</module>
 	</modules>
 	<repositories>
 		<repository>
@@ -43,9 +46,10 @@
 		</repository>
 	</repositories>
 	<scm>
-		<connection>scm:svn:http://taverna.googlecode.com/svn/taverna/engine/net.sf.taverna.t2.core/tags/core-1.5</connection>
-		<developerConnection>scm:svn:https://taverna.googlecode.com/svn/taverna/engine/net.sf.taverna.t2.core/tags/core-1.5</developerConnection>
-		<url>http://code.google.com/p/taverna/source/browse/#svn/taverna/engine/net.sf.taverna.t2.core/tags/core-1.5</url>
+      <connection>scm:git:git://github.com/taverna/taverna-engine-core.git</connection>
+      <developerConnection>scm:git:ssh://git@github.com/taverna/taverna-engine-core.git</developerConnection>
+      <url>https://github.com/taverna/taverna-engine-core/</url>
+      <tag>core-1.5.1</tag>
 	</scm>
 	<dependencyManagement>
 		<dependencies>

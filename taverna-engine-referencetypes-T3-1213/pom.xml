@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.sf.taverna.t2</groupId>
+		<artifactId>core</artifactId>
+    <!-- Note: Should be 1.5 in order for properties like ${t2.core.version} 
+         to be compatible with 2.5.0 release -->
+		<version>1.5</version>
+	</parent>
+	<groupId>net.sf.taverna.t2.core</groupId>
+	<artifactId>taverna-engine-referencetypes-T3-1213</artifactId>
+	<version>1.5.1</version>
+	<name>T3-1213 patch</name>
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.taverna.t2.core</groupId>
+			<artifactId>reference-core-extensions</artifactId>
+      <version>${t2.core.version}</version>
+		</dependency>
+	</dependencies>
+</project>
